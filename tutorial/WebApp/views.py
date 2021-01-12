@@ -53,3 +53,20 @@ class DeleteLogView(generic.DeleteView):
     def get_success_url(self):
         return reverse('WebApp:movie_detail', kwargs={'pk': self.object.movie.pk })
 
+class DeleteMovieView(generic.DeleteView):
+    model = Movie
+    def get_success_url(self):
+        return reverse('WebApp:index')
+
+def writingthismovielog(request, movie_id):
+    obj = get_object_or_404(Movie, id=movie_id)
+    form = LogForm({'movie':obj})
+    if request.method == "POST":
+        form = LogForm(request.POST)
+        if form.is_valid():
+            l = form.save(commit=False)
+            l.save()
+            return redirect('WebApp:movie_detail', pk=l.movie.pk)
+    else:
+        return render(request, 'WebApp/register.html', {'form': form})
+

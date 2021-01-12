@@ -6,4 +6,7 @@
         {{ movie.watch_date }}
     </li>
     {% endfor %}
+    <a href="{% url 'WebApp:registerdirector' %}">Register Director</a><br>
+    <a href="{% url 'WebApp:registermovie' %}">Register Movie</a><br>
+    <a href="{% url 'WebApp:writinglog' %}">Writing Log</a>
 {% endif %}
