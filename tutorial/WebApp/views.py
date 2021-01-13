@@ -2,7 +2,7 @@ from django.views import generic
 from WebApp.models import Movie, Director, Log
 from WebApp.form import DirectorForm, MovieForm, LogForm
 from django.urls import reverse
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 
 #Classベースの書き方とfunctionベースの書き方の両方がある。
 

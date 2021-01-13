@@ -9,6 +9,6 @@
         {{ log.text }}
     </li>
 {% endfor %}
-<a href="{% url 'WebApp:writingthismovielog' movie.id %}">Write log of this movie data</a><br>
-<a href="{% url 'WebApp:deletemovie' movie.id %}">Delete this movie data</a><br>
+<a href='{% url 'WebApp:writingthismovielog' movie.id %}'">Write log of this movie data</a><br>
+<a href='{% url 'WebApp:deletemovie' movie.id %}'">Delete this movie data</a><br>
 <a href="{% url 'WebApp:index' %}">To Index</a><br>

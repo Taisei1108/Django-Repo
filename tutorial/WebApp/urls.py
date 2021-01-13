@@ -11,5 +11,5 @@ urlpatterns = [
     path('update/log/<int:pk>/', views.UpdateLogView.as_view(), name='updatelog'), # この行を追加
     path('delete/log/<int:pk>/', views.DeleteLogView.as_view(), name='deletelog'), # この行を追加
     path('delete/movie/<int:pk>/', views.DeleteMovieView.as_view(), name='deletemovie'), # この行を追加
-    path('writing/log/<int:pk>', views.writingthismovielog, name='writingthismovielog'), # この行を追加
+    path('writing/thismovie/<int:movie_id>/log/', views.writingthismovielog, name='writingthismovielog'), # この行を追加
 ]
