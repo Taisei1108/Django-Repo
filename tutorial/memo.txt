@@ -1,1 +1,25 @@
 参考サイト　https://note.com/hungair0925/n/n700d7d4eb638
+
+form.as_pで一括で表示される理由がわからんな
+ViewとurlでURLの設定と、どのHTMLを表示するのかを決めて
+modelはデータベース関係で
+Viewは表示させるリストとかも決めてるのか
+Viewで作ったクラスはurlに接続している。
+Formで作った入力の仕方を表すクラスはviewのクラスの中で設定されていた
+そのクラスは更にurlに設定されているのか。
+
+
+Djangoは urlsの設定→views→template(html) で作れる。
+Viewで考慮すべきこと(丸パクリ)
+1. modelは何を使うか
+2. formは何を使うか
+3. 表示するtemplateは何を使うか
+4. 成功したらどこへ飛ばすのか
+
+detail.htmlで
+<button onclick = "location.href='{% url 'WebApp:updatelog 'log.id %}'">edit</button>  ←動かない
+<button onclick = "location.href='{% url 'WebApp:updatelog' log.id %}'">edit</button> ←動く
+なのなんでだろう〜〜〜〜
+
+path('writing/log/<int:pk>', views.writingthismovielog, name='writingthismovielog'), # この行を追加
+→動きまへん
